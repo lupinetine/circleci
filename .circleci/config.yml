@@ -1,8 +1,9 @@
 version: 2
 jobs:
    build:
+     working_directory: ~/circleci
      docker:
        - image: circleci/python:latest
-     steps:
-       - checkout
-       - run: echo "hello world"
+    steps:
+      - checkout
+      - run: pip install -r requirements/dev.txt
